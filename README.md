@@ -232,6 +232,8 @@ Durante o processo de cadastro, o usuário precisa **validar seu e-mail** antes 
 
 Para isso, é utilizado um serviço **SMTP**, responsável por enviar o e-mail de confirmação contendo o link de ativação da conta.
 
+---
+
 ## 🎓 Projeto Acadêmico
 
 Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do curso de **Sistemas de Informação**, com o objetivo de aplicar conceitos de:
