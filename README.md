@@ -158,11 +158,11 @@ A aplicação utiliza **WebView**, possibilitando que a interface web seja execu
 
 Web Application (Spring Boot + Thymeleaf)
 
-⬇️
+↓
 
 Accessible via Browser
 
-⬇️
+↓
 
 Mobile App using WebView
 
