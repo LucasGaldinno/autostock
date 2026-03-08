@@ -1,0 +1,120 @@
+body {
+    background: #f5f7fb;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont;
+    color: #0f172a;
+}
+
+.form-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.page-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.page-title-icon {
+    font-size: 26px;
+    color: #fff;
+    background: #3B82F6;
+    padding: 10px;
+    border-radius: 16%;
+}
+
+.page-title-text {
+    font-weight: 800;
+    margin: 0;
+}
+
+.card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    padding: 22px;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+}
+
+.section-icon-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.section-number {
+    background: #3B82F6;
+    color: white;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+.section-icon-wrapper i {
+    font-size: 1.4rem;
+    color: #1f2937;
+}
+
+.section-label {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.card-body label {
+    font-weight: 600;
+    margin-bottom: 5px;
+    display: block;
+}
+
+input, select {
+    border-radius: 8px !important;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 28px;
+}
+
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-weight: 600;
+    padding: 12px 22px;
+    border-radius: 10px !important;
+    transition: .2s;
+}
+
+/* Botão azul */
+.btn-primary {
+    background: #2563eb;
+    border: none;
+}
+
+.btn-primary:hover {
+    background: #1d4ed8;
+    transform: translateY(-1px);
+}
+
+footer {
+    text-align: center;
+    padding: 18px 16px 26px;
+    font-size: .85rem;
+    color: #9ca3af;
+}

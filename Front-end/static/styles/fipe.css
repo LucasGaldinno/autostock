@@ -1,0 +1,431 @@
+body {
+  background: #f3f6fa;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.fipe-header {
+    padding: 0px 0;
+    background-color: #f5f7fb;
+}
+
+.back-link {
+	padding: 6px 10px;
+	border-radius: 12px; 
+    display: inline-flex;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #475569;
+    text-decoration: none;
+    margin-bottom: 20px;
+    transition: 0.2s;
+}
+
+.back-link i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+}
+
+.back-link:hover {
+    background-color: #2563eb;
+    color: #ffffff !important;  
+    border-radius: 12px;      
+    box-shadow: 0 3px 10px rgba(37, 99, 235, 0.30);
+    text-decoration: none;
+}
+
+.fipe-title-group {
+    margin-top: 10px;
+}
+
+.fipe-title {
+    font-size: 2.3rem;
+    font-weight: 800;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.fipe-title i {
+    font-size: 2.1rem;
+    color: #2563eb;
+}
+
+.fipe-subtitle {
+    margin-top: 4px;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+footer {
+  padding: 16px;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #6b7280;
+}
+
+/* CONTAINER GERAL */
+.fipe-container {
+  max-width: 1200px;
+  margin: 24px auto 40px;
+  padding: 0 16px;
+}
+
+/* GRID DOS DOIS CARDS LADO A LADO */
+.fipe-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.2fr);
+  gap: 24px;
+}
+
+/* CARDS */
+.fipe-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 28px 24px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
+}
+
+/* card da esquerda deve ter altura natural */
+.fipe-card-left {
+  align-self: start; /* impede que cresça junto com o outro card */
+}
+
+/* card da direita cresce conforme conteúdo */
+.fipe-card-right {
+  align-self: start; /* também evita sincronização de altura */
+}
+
+
+/* TÍTULOS / TEXTOS */
+.fipe-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.fipe-subtitle {
+  font-size: 0.95rem;
+  color: #6b7280;
+  margin-bottom: 20px;
+}
+
+/* FORMULÁRIO */
+.fipe-form .form-label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.fipe-form .form-control {
+  border-radius: 12px;
+  padding: 12px 14px;
+  font-size: 1rem;
+  margin-bottom: 18px;
+}
+
+.btn-fipe-submit {
+  width: 100%;
+  border: none;
+  border-radius: 12px;
+  background: #2563eb;
+  color: white;
+  padding: 12px 16px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  transition: background 0.15s ease-in-out, transform 0.1s;
+}
+
+.btn-fipe-submit:hover {
+  background: #1d4ed8;
+  transform: translateY(-1px);
+}
+
+.fipe-placeholder {
+    text-align: center;
+    margin-top: 20px;
+    color: #94a3b8; /* cinza suave */
+}
+
+.fipe-placeholder-icon {
+    font-size: 64px;
+    color: #cbd5e1; /* cinza bem claro */
+    margin-bottom: 16px;
+}
+
+
+/* RESULTADO - PLACEHOLDER */
+.fipe-result-placeholder {
+  margin-top: 24px;
+  text-align: center;
+  color: #9ca3af;
+}
+
+.fipe-result-icon {
+  font-size: 56px;
+  color: #cbd5f5;
+}
+
+/* RESULTADO - CARD */
+.fipe-result-card {
+  margin-top: 20px;
+  padding: 20px 18px;
+  border-radius: 16px;
+  background: #f9fafb;
+  text-align: left;
+}
+
+.fipe-result-card h3 {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+/* BOX DO PREÇO */
+.fipe-price-box {
+  margin-top: 12px;
+  padding: 16px;
+  border-radius: 16px;
+  background: #e0edff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.fipe-price-box .label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #1d4ed8;
+  font-weight: 600;
+}
+
+.fipe-price-box .value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #1e3a8a;
+}
+
+.fipe-card {
+    transition: all 0.2s ease;
+}
+
+.fipe-card:hover {
+    transform: translateY(-6px) scale(1.01);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+}
+
+/* ALERTA */
+.alert {
+  border-radius: 12px;
+}
+
+/* RESPONSIVO */
+@media (max-width: 900px) {
+  .fipe-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -----------------------------
+   RESPONSIVO - TABLETS (≤ 1024px)
+   Mesmo padrão que você usa!
+------------------------------ */
+@media (max-width: 1024px) {
+
+    .fipe-header {
+        padding: 24px 18px;
+    }
+
+    .fipe-title {
+        font-size: 2rem;
+        gap: 10px;
+    }
+
+    .fipe-title i {
+        font-size: 1.9rem;
+    }
+
+    .fipe-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 22px;
+    }
+
+    .fipe-card {
+        padding: 26px 22px;
+        border-radius: 18px;
+    }
+
+    .fipe-result-card h3 {
+        font-size: 1.25rem;
+    }
+
+    .fipe-price-box .value {
+        font-size: 1.45rem;
+    }
+}
+
+/* -----------------------------
+   RESPONSIVO - MOBILE PADRÃO (≤ 768px)
+   (Este é o SEU bloco, mantido e respeitado!)
+------------------------------ */
+@media (max-width: 768px) {
+
+    .fipe-header {
+        padding: 20px 14px;
+        text-align: left;
+    }
+
+    .back-link {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+        border-radius: 10px;
+    }
+
+    .back-link i {
+        font-size: 1rem;
+    }
+
+    .fipe-title {
+        font-size: 1.8rem;
+        gap: 8px;
+    }
+
+    .fipe-title i {
+        font-size: 1.7rem;
+    }
+
+    .fipe-subtitle {
+        font-size: 0.95rem;
+    }
+
+    .fipe-container {
+        padding: 0 14px;
+        margin-top: 16px;
+    }
+
+    .fipe-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .fipe-card {
+        padding: 22px 18px;
+        border-radius: 16px;
+    }
+
+    .form-control {
+        font-size: 0.95rem;
+        padding: 10px 12px;
+    }
+
+    .btn-fipe-submit {
+        padding: 10px 14px;
+        font-size: 0.95rem;
+    }
+
+    .btn-fipe-submit i {
+        font-size: 0.95rem;
+    }
+
+    .fipe-placeholder-icon {
+        font-size: 48px;
+        margin-bottom: 12px;
+    }
+
+    .fipe-result-card {
+        padding: 16px 14px;
+        margin-top: 16px;
+    }
+
+    .fipe-result-card h3 {
+        font-size: 1.2rem;
+    }
+
+    .fipe-price-box {
+        padding: 14px;
+    }
+
+    .fipe-price-box .value {
+        font-size: 1.4rem;
+    }
+
+    footer {
+        font-size: 0.85rem;
+        padding-bottom: 30px;
+    }
+}
+
+/* -----------------------------
+   RESPONSIVO - MOBILE PEQUENO (≤ 480px)
+   Mantendo seu padrão visual
+------------------------------ */
+@media (max-width: 480px) {
+
+    .fipe-header {
+        padding: 16px 12px;
+    }
+
+    .back-link {
+        padding: 7px 10px;
+        font-size: 0.9rem;
+    }
+
+    .fipe-title {
+        font-size: 1.55rem;
+        gap: 6px;
+    }
+
+    .fipe-title i {
+        font-size: 1.4rem;
+    }
+
+    .fipe-subtitle {
+        font-size: 0.85rem;
+    }
+
+    .fipe-container {
+        padding: 0 10px;
+    }
+
+    .fipe-card {
+        padding: 18px 14px;
+        border-radius: 14px;
+    }
+
+    .form-control {
+        padding: 9px 10px;
+        font-size: 0.9rem;
+    }
+
+    .btn-fipe-submit {
+        font-size: 0.9rem;
+        padding: 9px 12px;
+    }
+
+    .btn-fipe-submit i {
+        font-size: 0.9rem;
+    }
+
+    .fipe-result-card {
+        padding: 14px 12px;
+    }
+
+    .fipe-result-card h3 {
+        font-size: 1.05rem;
+    }
+
+    .fipe-price-box {
+        padding: 12px;
+    }
+
+    .fipe-price-box .value {
+        font-size: 1.25rem;
+    }
+
+    .fipe-placeholder-icon {
+        font-size: 40px;
+    }
+}

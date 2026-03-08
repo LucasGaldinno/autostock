@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AutoStock - Veículos em Estoque</title>
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+	<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+	<link rel="stylesheet" th:href="@{/styles/home.css}">
+	<link rel="stylesheet" th:href="@{/styles/vehicles.css}">
+</head>
+
+<body>
+
+	<header class="home-header">
+		<div class="home-header-inner">
+
+			<div class="brand-block">
+				<div class="brand-icon"><i class="fa-solid fa-car"></i></div>
+				<div>
+					<div class="brand-title">AutoStock</div>
+					<div class="brand-subtitle">Gestão inteligente</div>
+				</div>
+			</div>
+
+			<div class="header-actions">
+				<a href="/home" class="header-icon"><i class="fa-solid fa-house"></i></a>
+				<a href="/vehicles/create" class="header-icon"><i class="fa-solid fa-plus"></i></a>
+				<a href="/vehicles/fipe/consulta" class="header-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+				<a th:href="@{/logout}" class="header-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+			</div>
+
+		</div>
+	</header>
+
+	<main class="home-main">
+		<div class="home-container">
+
+			<div class="header-top">
+				<div class="header-title">
+					<h2>Veículos em Estoque</h2>
+					<div class="search-wrapper">
+						<i class="fa-solid fa-magnifying-glass search-icon"></i>
+						<input type="text" class="search-input" placeholder="Buscar por placa, marca ou modelo…">
+					</div>
+				</div>
+				<div class="kpi-card">
+					<div class="kpi-text">
+						<div class="kpi-label">Valor Total em Estoque</div>
+						<div class="kpi-value"
+							th:text="${#numbers.formatDecimal(totalEstoque, 2, 'COMMA', 3, 'POINT')}"></div>
+					</div>
+					<div class="kpi-icon-badge light-blue">
+						<i class="fa-solid fa-dollar-sign"></i>
+					</div>
+				</div>
+			</div>
+			<div class="vehicles-grid" th:if="${vehicles}">
+				<div class="vehicle-card" th:each="v : ${vehicles}" th:attr="data-plate=${v.plate}">
+
+					<div class="vehicle-image-wrapper" th:if="${v.images != null and !#lists.isEmpty(v.images)}">
+						<input type="hidden" th:id="'images-' + ${v.id}"
+							th:value="${#strings.arrayJoin(v.images, ',')}" />
+
+						<img class="vehicle-image" th:src="@{'/uploads/' + ${v.images[0].imageUrl}}"
+							th:id="'img-' + ${v.id}" alt="Imagem do veículo" th:onclick="|openImageModal(${v.id})|" />
+						<div class="carousel-buttons">
+							<button type="button" th:onclick="|prevImage(${v.id})|">◀</button>
+							<button type="button" th:onclick="|nextImage(${v.id})|">▶</button>
+						</div>
+					</div>
+					<div class="vehicle-info">
+						<h4 th:text="${v.brand + ' ' + v.model}"></h4>
+
+						<div class="info-row">
+							<i class="fa-solid fa-calendar-day"></i>
+							<span>Ano Modelo</span>
+							<p th:text="${v.manufactureYear}"></p>
+						</div>
+
+						<div class="info-row">
+							<i class="fa-solid fa-gas-pump"></i>
+							<span>Combustível</span>
+							<p th:text="${v.fuel}"></p>
+						</div>
+
+						<div class="info-row">
+							<i class="fa-solid fa-tachometer-alt"></i>
+							<span>Km</span>
+							<p class="km-value" th:text="${v.mileage + ' km'}"></p>
+						</div>
+
+						<div class="info-row">
+							<i class="fa-solid fa-id-card"></i>
+							<span>Placa</span>
+							<p th:text="${v.plate}"></p>
+						</div>
+
+						<div class="info-row">
+							<i class="fa-solid fa-palette"></i>
+							<span>Cor</span>
+							<p th:text="${v.color}"></p>
+						</div>
+
+						<div class="price"
+							th:text="'R$ ' + ${#numbers.formatDecimal(v.purchasePrice, 0, 'POINT', 2, 'COMMA')}">
+						</div>
+					</div>
+					<div class="vehicle-actions">
+						<a th:href="@{'/vehicles/edit/' + ${v.id}}" title="Editar">
+							<i class="fa-solid fa-pen"></i>
+						</a>
+
+						<form th:action="@{'/vehicles/delete/' + ${v.id}}" method="post"
+							onsubmit="return confirmDeleteVehicle(event)">
+
+							<button type="submit" class="btn-delete-vehicle" title="Excluir">
+								<i class="fa-solid fa-trash"></i>
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+	<div id="imageModal" class="image-modal">
+
+		<div class="image-modal-inner">
+
+			<span class="close-modal" onclick="closeImageModal()">&times;</span>
+
+			<button class="modal-prev" onclick="prevModalImage()">◀</button>
+
+			<img id="modalImage" class="modal-content-image">
+
+			<button class="modal-next" onclick="nextModalImage()">▶</button>
+
+		</div>
+
+	</div>
+	<footer class="home-footer">© 2025 AutoStock — Sistema completo para lojas de veículos.</footer>
+	<script th:src="@{/scripts/vehicles.js}"></script>
+</body>
+
+</html>

@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AutoStock - Sistema para Lojas de Veículos</title>
+    <meta name="description" content="Sistema completo para gestão de lojas de veículos com CRM, Emissor NF-e, Integrador Web, controle de estoque e muito mais. Tudo fácil e 100% online!" />
+    <meta name="author" content="AutoStock" />
+    <meta name="keywords" content="sistema para loja de carros, gestão automotiva, CRM veículos, emissor nfe, controle estoque carros" />
+    
+    <meta property="og:title" content="AutoStock - Sistema para Lojas de Veículos" />
+    <meta property="og:description" content="Sistema completo para gestão de lojas de veículos com CRM, Emissor NF-e, Integrador Web, controle de estoque e muito mais." />
+    <meta property="og:type" content="website" />
+    
+	<link rel="stylesheet" th:href="@{/styles/main.css}">
+	<link rel="stylesheet" th:href="@{/styles/components.css}">
+	<link rel="stylesheet" th:href="@{/styles/responsive.css}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav-content">
+                <!-- Logo -->
+                <div class="logo">
+                    <h1>AutoStock</h1>
+                </div>
+
+                <!-- Desktop Navigation -->
+                <div class="nav-desktop">
+                    <a href="#home" class="nav-link">Início</a>
+                    <a href="#solutions" class="nav-link">Soluções</a>
+                    <a href="#features" class="nav-link">Recursos</a>
+                    <a href="#contact" class="nav-link">Contato</a>
+                </div>
+
+                <!-- Desktop CTA -->
+                <div class="nav-cta-desktop">
+                    <a href="/login"><button class="btn btn-outline btn-sm">Entrar</button></a>
+                    <a href="#" th:href="@{/registration/registration-form}"><button class="btn btn-accent btn-sm">Registre-se</button></a>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="nav-mobile-toggle">
+                    <button class="mobile-menu-btn" id="mobileMenuBtn">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Navigation -->
+            <div class="nav-mobile" id="mobileMenu">
+                <a href="#home" class="nav-mobile-link">Início</a>
+                <a href="#solutions" class="nav-mobile-link">Soluções</a>
+                <a href="#features" class="nav-mobile-link">Recursos</a>
+                <a href="#contact" class="nav-mobile-link">Contato</a>
+                <div class="nav-mobile-cta">
+					<a href="/login"><button class="btn btn-outline btn-sm">Entrar</button></a>
+					<a href="#" th:href="@{/registration/registration-form}"><button class="btn btn-accent btn-sm">Registre-se</button></a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+			<img th:src="@{/imgs/hero-background.jpg}" alt="AutoStock Background">
+            <div class="hero-overlay"></div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <!-- Left Content -->
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        Sistema para <span class="gradient-text">Lojas de Veículos</span>
+                    </h1>
+                    <p class="hero-description">
+                        Gestão completa da sua loja com Controle de Estoque, Emissor de NF-e, 
+                        Integrador Web, CRM Dedicado, Gestão Financeira e muito mais. 
+                        <span class="hero-highlight">Tudo fácil e 100% online!</span>
+                    </p>
+                    <div class="hero-info">
+                        <div class="info-item">
+                            <div class="info-dot"></div>
+                            <span>Agende uma demonstração online e sem compromisso.</span>
+                        </div>
+                    </div>
+                    <div class="hero-buttons">
+                        <button class="btn btn-hero btn-lg">
+                            Agendar demonstração gratuita
+                            <svg class="btn-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m9 18 6-6-6-6"/>
+                            </svg>
+                        </button>
+                        <button class="btn btn-outline btn-lg">
+                            <svg class="btn-icon-left" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polygon points="5,3 19,12 5,21 5,3"/>
+                            </svg>
+                            Ver demonstração
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="hero-right">
+                    <div class="dashboard-preview">
+                        <div class="dashboard-glow"></div>
+                        <div class="dashboard-container">
+                			<img th:src="@{/imgs/hero-dashboard.jpg}" alt="AutoStock Dashboard Preview">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solutions Section -->
+    <section id="solutions" class="solutions">
+        <div class="container">
+            <div class="section-header">
+                <h2>
+                    <span class="text-accent">Principais soluções</span> 
+                    do sistema para lojas de veículos AutoStock
+                </h2>
+                <p>
+                    Conte com as funcionalidades avançadas do sistema para lojas de veículos AutoStock 
+                    para ter uma gestão empresarial eficiente e otimizada.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+                <div class="solution-card">
+                    <div class="solution-icon text-primary">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/>
+                            <circle cx="9" cy="7" r="4"/>
+                            <path d="m22 21-3-3m0 0-3-3m3 3 3 3m-3-3 3-3"/>
+                        </svg>
+                    </div>
+                    <h3>CRM</h3>
+                    <p>O Gerenciador de Leads que ajuda a controlar e organizar de forma automática e inteligente as oportunidades do dia a dia da sua loja.</p>
+                    <button class="btn btn-outline btn-sm">Saiba mais</button>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon text-accent">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                    </div>
+                    <h3>Emissor NF-e</h3>
+                    <p>Com poucos cliques você emite uma nota fiscal, gera a Danfe e ainda não corre o risco de perder o arquivo XML. Nosso sistema ainda valida as informações antes de enviar a NF-e para o SEFAZ.</p>
+                    <button class="btn btn-outline btn-sm">Saiba mais</button>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon text-primary-light">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 3v18h18"/>
+                            <path d="M18.7 8l-5.1 5.2-2.8-2.7L7 14.3"/>
+                        </svg>
+                    </div>
+                    <h3>Integrador de estoque</h3>
+                    <p>Publique os seus anúncios nos principais portais como OLX, Webmotors, SóCarrão, iCarros, MeuCarroNovo, Mercado Livre, Facebook e mais de 20 outras opções!</p>
+                    <button class="btn btn-outline btn-sm">Saiba mais</button>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon text-primary">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="M12 2a10 10 0 0 0 0 20"/>
+                        </svg>
+                    </div>
+                    <h3>Site profissional</h3>
+                    <p>Site de alta performance para loja de carros. Tenha um site profissional que se adapta a qualquer dispositivo (Computador, Tablet ou Celular).</p>
+                    <button class="btn btn-outline btn-sm">Saiba mais</button>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon text-accent">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 12l2 2 4-4"/>
+                            <path d="M21 12c.552 0 1-.448 1-1V8a2 2 0 0 0-2-2h-5L9.414 2.586A2 2 0 0 0 8 2H4a2 2 0 0 0-2 2v11c0 .552.448 1 1 1z"/>
+                        </svg>
+                    </div>
+                    <h3>Avaliação Pro</h3>
+                    <p>Sistema de Avaliação Profissional para Lojas de Veículos. Faça avaliações profissionais com precificação, controle de etapas e logs de auditoria.</p>
+                    <button class="btn btn-outline btn-sm">Saiba mais</button>
+                </div>
+
+                <div class="solution-card">
+                    <div class="solution-icon text-primary-light">
+                        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M7 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                            <path d="M17 17m-2 0a2 2 0 1 0 4 0a2 2 0 1 0 -4 0"/>
+                            <path d="M5 17h-2v-11a1 1 0 0 1 1 -1h9v12m-4 0h6m0 0h2v-6h-8m0 -5h5l3 5"/>
+                        </svg>
+                    </div>
+                    <h3>Vistoria de Veículo</h3>
+                    <p>Garanta negociações seguras e eficientes. Realize vistorias completas e evite riscos de fraudes e prejuízos financeiros.</p>
+                    <button class="btn btn-outline btn-sm">Saiba mais</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="features-content">
+                <!-- Left Content -->
+                <div class="features-left">
+                    <h2>
+                        <span class="text-accent">A hora de mudar</span> 
+                        a realidade da sua loja de veículos é agora.
+                    </h2>
+                    <p>Um sistema para loja de carros completo para você ter o controle em suas mãos com total segurança!</p>
+                    
+                    <div class="features-illustration">
+                        <div class="illustration-icon">🚗</div>
+                        <p>Sistema completo para gestão automotiva</p>
+                    </div>
+                </div>
+
+                <!-- Right Content -->
+                <div class="features-right">
+                    <div class="feature-card">
+                        <div class="feature-icon text-accent">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
+                                <line x1="9" y1="9" x2="9.01" y2="9"/>
+                                <line x1="15" y1="9" x2="15.01" y2="9"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Facilidade e praticidade</h3>
+                            <p>Não basta ser completo. O sistema tem que ser fácil e prático no controle do dia a dia. Por isso usamos nossa experiência e as sugestões de nossos clientes de várias revendas de veículos para simplificar a sua vida.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon text-primary">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Economia de trabalho</h3>
+                            <p>Por que digitar as mesmas informações do cliente e/ou veículos em diversos lugares diferentes? Com o AutoStock você aproveita as informações, realiza várias atividades e controla tudo em uma única plataforma.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon text-accent">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Segurança dos dados</h3>
+                            <p>Os dados ficam em nossos servidores e por isso estão seguros contra perda, roubo ou acesso indevido. Nossa política de segurança ainda conta com backups, controle de permissões e logs de acesso. Tudo para você ficar despreocupado na sua loja de veículos.</p>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-icon text-primary-light">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                                <line x1="8" y1="21" x2="16" y2="21"/>
+                                <line x1="12" y1="17" x2="12" y2="21"/>
+                            </svg>
+                        </div>
+                        <div class="feature-content">
+                            <h3>Flexibilidade e acessibilidade</h3>
+                            <p>Diferente de outros softwares de gestão para loja de veículos, aqui você pode acessar e consultar as nossas fiscais eletrônicas (NF-e) de qualquer computador e não fica amarrado a certificados digitais de apenas um computador.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact-content">
+                <!-- Left Content -->
+                <div class="contact-left">
+                    <h2>
+                        Quer economizar <span class="gradient-text">seu tempo e lucrar mais?</span>
+                    </h2>
+                    <p>
+                        Agende uma demonstração com um consultor especializado que irá analisar 
+                        a sua necessidade e oferecer o melhor plano e solução.
+                    </p>
+
+                    <div class="contact-steps">
+                        <div class="contact-step">
+                            <div class="step-number bg-primary">1</div>
+                            <div class="step-content">
+                                <h3>Análise personalizada</h3>
+                                <p>Entendemos as necessidades específicas da sua loja</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-step">
+                            <div class="step-number bg-accent">2</div>
+                            <div class="step-content">
+                                <h3>Demonstração ao vivo</h3>
+                                <p>Veja o sistema funcionando em tempo real</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-step">
+                            <div class="step-number bg-primary-light">3</div>
+                            <div class="step-content">
+                                <h3>Plano ideal</h3>
+                                <p>Receba a proposta que melhor se adequa ao seu negócio</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Content - Contact Form -->
+                <div class="contact-right">
+                    <div class="contact-form-card">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="phone">Seu telefone de contato</label>
+                                <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="storeName">Nome da loja</label>
+                                <input type="text" id="storeName" name="storeName" placeholder="Informe o nome da loja" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="position">Qual o seu cargo na loja? *</label>
+                                <select id="position" name="position" required>
+                                    <option value="">Selecione</option>
+                                    <option value="proprietario">Proprietário</option>
+                                    <option value="gerente">Gerente</option>
+                                    <option value="vendedor">Vendedor</option>
+                                    <option value="administrativo">Administrativo</option>
+                                    <option value="outro">Outro</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="vehicleQuantity">Qual a quantidade de veículos em estoque? *</label>
+                                <select id="vehicleQuantity" name="vehicleQuantity" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1-10">1 a 10 veículos</option>
+                                    <option value="11-30">11 a 30 veículos</option>
+                                    <option value="31-50">31 a 50 veículos</option>
+                                    <option value="51-100">51 a 100 veículos</option>
+                                    <option value="100+">Mais de 100 veículos</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="btn btn-accent btn-lg btn-full">
+                                Solicitar demonstração
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <!-- Company Info -->
+                <div class="footer-company">
+                    <h3 class="footer-logo">AutoStock</h3>
+                    <p>
+                        Possuímos um conhecimento profundo e uma autoridade inquestionável 
+                        nos segmentos automotivo e tecnológico.
+                    </p>
+                    <p>
+                        Nossos fundadores são verdadeiros especialistas que cresceram e 
+                        se desenvolveram nesse ambiente altamente competitivo.
+                    </p>
+                    <p>
+                        Ao longo de mais de 20 anos, temos dedicado nossa experiência e 
+                        habilidades para criar soluções sob medida para lojas de veículos, 
+                        gerando economia de tempo e, sobretudo, de recursos financeiros 
+                        para nossos clientes de forma consistente e confiável.
+                    </p>
+                </div>
+
+                <!-- Solutions -->
+                <div class="footer-section">
+                    <h4>Soluções</h4>
+                    <ul>
+                        <li><a href="#">CRM</a></li>
+                        <li><a href="#">Avaliação Pro</a></li>
+                        <li><a href="#">Integrador Web</a></li>
+                        <li><a href="#">Vistoria de veículo</a></li>
+                        <li><a href="#">Emissor de nota fiscal</a></li>
+                        <li><a href="#">Site para loja de carros</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-section">
+                    <h4>Links úteis</h4>
+                    <ul>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Materiais para download</a></li>
+                        <li><a href="#">Central de ajuda</a></li>
+                        <li><a href="#">Planos</a></li>
+                        <li><a href="#">Criar conta</a></li>
+                    </ul>
+                </div>
+
+                <!-- Institutional -->
+                <div class="footer-section">
+                    <h4>Institucional</h4>
+                    <ul>
+                        <li><a href="#">Código de Conduta Fornecedores</a></li>
+                        <li><a href="#">Canal de Denúncias Grupo Webmotors</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                            <path d="m16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/>
+                            <polygon points="9.75,15.02 15.5,11.75 9.75,8.48"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Website">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <path d="m12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
+                            <path d="M2 12h20"/>
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/>
+                            <rect x="2" y="9" width="4" height="12"/>
+                            <circle cx="4" cy="4" r="2"/>
+                        </svg>
+                    </a>
+                </div>
+                
+				<div class="footer-legal">
+				    <p>
+				        Este site é protegido pelo reCAPTCHA e está sujeito à 
+				        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Política de Privacidade</a> 
+				        e aos 
+				        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer">Termos de Serviço</a> 
+				        do Google.
+				    </p>
+				    <p>© 2025 <strong>AutoStock</strong>. Todos os direitos reservados.</p>
+				</div>
+            </div>
+        </div>
+    </footer>
+
+	<script src="/scripts/main.js" th:src="@{/scripts/main.js}"></script>
+</body>
+</html>

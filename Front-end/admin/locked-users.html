@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Usuários Bloqueados</title>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+	<link rel="stylesheet" th:href="@{/styles/home.css}">
+	<link rel="stylesheet" th:href="@{/styles/admin-locked-users.css}">
+</head>
+
+<body>
+
+	<header class="home-header">
+		<div class="home-header-inner">
+			<div class="brand-block">
+				<div class="brand-icon"><i class="fa-solid fa-car"></i></div>
+				<div>
+					<div class="brand-title">AutoStock</div>
+					<div class="brand-subtitle">Gestão inteligente</div>
+				</div>
+			</div>
+			<div class="header-actions">
+				<a href="/admin/dashboard" class="header-icon">
+					<i class="fa-solid fa-house"></i>
+				</a>
+
+				<a href="/admin/usuarios" class="header-icon">
+					<i class="fa-solid fa-users"></i>
+				</a>
+
+				<a th:href="@{/logout}" class="header-icon">
+					<i class="fa-solid fa-right-from-bracket"></i>
+				</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="container locked-container">
+
+		<div class="page-title-wrapper">
+			<div class="page-title-icon bg-danger">
+				<i class="fa-solid fa-user-lock"></i>
+			</div>
+			<h2 class="page-title-text text-danger">Usuários Bloqueados</h2>
+		</div>
+
+		<div th:if="${#lists.isEmpty(users)}" class="empty-card shadow-sm">
+			Nenhum usuário bloqueado no momento.
+		</div>
+
+		<div th:if="${!#lists.isEmpty(users)}" class="table-card shadow-sm">
+
+			<table class="table table-hover align-middle locked-table">
+				<thead>
+					<tr>
+						<th>Email</th>
+						<th>CNPJ</th>
+						<th>Telefone</th>
+						<th class="text-end">Ações</th>
+					</tr>
+				</thead>
+
+				<tbody>
+					<tr th:each="u : ${users}">
+						<td th:text="${u.email}"></td>
+						<td th:text="${u.cnpj}"></td>
+						<td th:text="${u.telefone}"></td>
+
+						<td class="text-end">
+							<form th:action="@{/admin/desbloquear/{id}(id=${u.id})}" method="post" class="d-inline">
+								<button class="action-btn unlock-btn">
+									<i class="fa-solid fa-unlock"></i> Desbloquear
+								</button>
+							</form>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+
+		</div>
+
+		<div class="locked-mobile-list" th:if="${!#lists.isEmpty(users)}">
+
+			<div class="locked-mobile-card" th:each="u : ${users}">
+
+				<div class="mob-line">
+					<span class="mob-label">Email:</span>
+					<span th:text="${u.email}"></span>
+				</div>
+
+				<div class="mob-line">
+					<span class="mob-label">CNPJ:</span>
+					<span th:text="${u.cnpj}"></span>
+				</div>
+
+				<div class="mob-line">
+					<span class="mob-label">Telefone:</span>
+					<span th:text="${u.telefone}"></span>
+				</div>
+
+				<div class="mob-actions">
+					<form th:action="@{/admin/desbloquear/{id}(id=${u.id})}" method="post">
+						<button class="mob-btn mob-unlock">
+							<i class="fa-solid fa-unlock"></i> Desbloquear
+						</button>
+					</form>
+				</div>
+
+			</div>
+
+		</div>
+
+	</div>
+	<footer>
+		© 2025 AutoStock — Sistema completo para lojas de veículos.
+	</footer>
+
+</body>
+
+</html>

@@ -1,0 +1,85 @@
+/* =======================
+   ESTILO GERAL DA PÁGINA
+   ======================= */
+body {
+    background-color: #f5f7fa;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+/* =======================
+   FORMULÁRIO
+   ======================= */
+form {
+    background: #ffffff;
+    padding: 25px 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
+}
+
+label {
+    font-size: 14px;
+    color: #444;
+}
+
+.form-control {
+    border-radius: 8px;
+    font-size: 15px;
+    padding: 10px 12px;
+    border: 1px solid #ced4da;
+}
+
+.form-control:focus {
+    box-shadow: 0 0 0 0.15rem rgba(13, 110, 253, 0.25);
+    border-color: #0d6efd;
+}
+
+/* =======================
+   BOTÕES
+   ======================= */
+.btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    padding: 8px 20px;
+    font-weight: 500;
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+.btn-secondary {
+    border-radius: 8px;
+    padding: 8px 18px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* =======================
+   RESPONSIVIDADE
+   ======================= */
+@media (max-width: 768px) {
+    form {
+        padding: 18px;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        width: 100%;
+        justify-content: center;
+        margin-top: 10px;
+    }
+
+    .ms-2 {
+        margin-left: 0 !important;
+    }
+}

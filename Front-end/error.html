@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Icone da página -->
+    <link rel="shortcut icon" href="https://cdn-icons-png.flaticon.com/512/4345/4345800.png" type="image/x-icon">
+	<link rel="stylesheet" th:href="@{/styles/error.css}">
+    <title>Erro</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="/"><img src="https://images.vexels.com/media/users/3/151217/isolated/preview/0a601237dc973b67ebaf733174dd9ecd-icone-de-desenho-de-folha-e-lapis.png" alt="" class="logo"></a>
+            <ul>
+                <li><a href="#" th:href="@{/}">Home</a></li>
+                <li><a href="/login">Entrar</a></li>
+                <li><a href="#" th:href="@{/registration/registration-form}">Registre-se</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="main">
+        <section class="section">
+            <div class="left">
+				<p th:if="${param.invite_invalid}">Token de convite inválido.</p>
+				<p th:if="${param.invite_expired}">Este convite expirou. Peça um novo para a agência.</p>
+				<p th:if="${param.invite_used}">Este convite já foi utilizado.</p>
+                <p th:if="${param.invalid}">Token de verificação inválido.</p>
+                <p th:if="${param.expired}">Este link de verificação já expirou.</p>
+                <p th:if="${param.invalid_token}">Este link de redefinição de senha já expirou.</p>
+                <p th:if="${param.not_found}">Token de redefinição de senha inválido.</p>
+                <h4>Não conseguimos encontrar a página <br> que você está procurando.</h4>
+                <a href="#" th:href="@{/}" class="btn">Home</a>
+            </div>
+            <div class="right">
+                <img src="https://static.vecteezy.com/system/resources/previews/020/002/643/non_2x/astronaut-graphic-clipart-design-free-png.png" alt="imagem de erro">
+                <div class="shadow"></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

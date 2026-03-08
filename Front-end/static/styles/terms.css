@@ -1,0 +1,73 @@
+body {
+    background: #f6f9ff;
+    font-family: system-ui, sans-serif;
+    margin: 0;
+}
+
+.terms-header {
+    background: #fff;
+    padding: 18px 30px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.logo-wrapper {
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #2563eb;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-wrapper i {
+    font-size: 1.5rem;
+}
+
+.terms-container {
+    max-width: 900px;
+    margin: 40px auto;
+}
+
+.terms-title {
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: center;
+    color: #1e3a8a;
+}
+
+.terms-version-badge {
+    background: #d1fae5;
+    color: #065f46;
+    padding: 8px 14px;
+    border-radius: 18px;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    width: fit-content;
+    margin: 15px auto 25px;
+    gap: 8px;
+    border: 1px solid #a7f3d0;
+}
+
+.intro-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.06);
+    margin-bottom: 30px;
+}
+
+.accordion-button {
+    font-weight: 700;
+    font-size: 1rem;
+}
+.text-content {
+    line-height: 1.6;
+}
+
+footer {
+    text-align: center;
+    padding: 18px 16px 26px;
+    font-size: 0.85rem;
+    color: #9ca3af;
+}

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Verificação em Duas Etapas - AutoStock</title>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="/styles/verify-code.css" th:href="@{/styles/verify-code.css}">
+</head>
+
+<body>
+
+	<div class="container">
+		<h2>Verificação em duas etapas</h2>
+		<p class="instruction">Por favor, digite o código que enviamos para o seu e-mail:</p>
+		<p class="email" th:text="${email}">exemplo@email.com</p>
+		<div class="error" th:if="${param.error}">
+			Código inválido ou expirado. Tente novamente.
+		</div>
+		<div class="success" th:if="${param.resent}">
+			Um novo código foi enviado para seu e-mail.
+		</div>
+
+		<form action="/verify-code" method="post" id="codeForm">
+			<div class="code-inputs">
+				<input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+				<input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+				<input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+				<input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+				<input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+				<input type="text" maxlength="1" inputmode="numeric" pattern="[0-9]*" required>
+			</div>
+
+			<input type="hidden" name="code" id="codeValue">
+			<button type="submit">Verificar</button>
+		</form>
+
+		<div class="resend">
+			Não encontrou? <a href="/verify-code/resend">Reenviar código</a><br>
+			<span style="font-size: 0.85rem;">Confira também a aba <em>Promoções</em> do seu e-mail</span>
+		</div>
+	</div>
+	<script th:src="@{/scripts/verify-code.js}"></script>
+</body>
+</html>

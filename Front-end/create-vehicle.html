@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>AutoStock - Cadastro de Veículo</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	<link rel="stylesheet" th:href="@{/styles/create-vehicle.css}">
+	<link rel="stylesheet" th:href="@{/styles/home.css}">
+</head>
+
+<body>
+	<header class="home-header">
+		<div class="home-header-inner">
+			<div class="brand-block">
+				<div class="brand-icon"><i class="fa-solid fa-car"></i></div>
+				<div>
+					<div class="brand-title">AutoStock</div>
+					<div class="brand-subtitle">Gestão inteligente</div>
+				</div>
+			</div>
+			<div class="header-actions">
+				<a href="/home" class="header-icon"><i class="fa-solid fa-house"></i></a>
+				<a href="/vehicles/fipe/consulta" class="header-icon"><i class="fa-solid fa-magnifying-glass"></i></a>
+				<a th:href="@{/logout}" class="header-icon"><i class="fa-solid fa-right-from-bracket"></i></a>
+			</div>
+		</div>
+	</header>
+
+	<main class="container mt-4">
+		<div class="form-container">
+			<form th:action="@{/vehicles/create}" method="post" th:object="${vehicle}" enctype="multipart/form-data">
+
+				<div class="page-title-wrapper">
+				    <i class="fa-solid fa-plus page-title-icon"></i>
+				    <h2 class="mb-4 page-title-text">Cadastro de veículo</h2>
+				</div>
+				
+				<div th:if="${successMessage}" class="alert alert-success">
+					<p th:text="${successMessage}"></p>
+				</div>
+				<div th:if="${errorMessage}" class="alert alert-danger">
+					<p th:text="${errorMessage}"></p>
+				</div>
+				<div th:if="${#fields.hasErrors('plate')}" class="alert alert-danger">
+					<p th:errors="*{plate}"></p>
+				</div>
+				<div th:if="${#fields.hasErrors('renavam')}" class="alert alert-danger">
+					<p th:errors="*{renavam}"></p>
+				</div>
+				<div th:if="${#fields.hasErrors('chassis')}" class="alert alert-danger">
+					<p th:errors="*{chassis}"></p>
+				</div>
+				<div th:if="${#fields.hasErrors('manufactureYear')}" class="alert alert-danger">
+					<p th:errors="*{manufactureYear}"></p>
+				</div>
+
+				<div th:if="${#fields.hasErrors('modelYear')}" class="alert alert-danger">
+					<p th:errors="*{modelYear}"></p>
+				</div>
+				<div th:if="${#fields.hasErrors('mileage')}" th:errors="*{mileage}" class="alert alert-danger">
+				</div>
+				<div th:if="${#fields.hasErrors('purchasePrice')}" th:errors="*{purchasePrice}"
+					class="alert alert-danger">
+				</div>
+
+				<section>
+					<div class="card mb-3">
+						<div class="section-title">
+							<div class="section-icon-wrapper">
+								<span class="section-number">1</span>
+								<i class="fa-solid fa-car"></i>
+							</div>
+							<h4 class="section-label">Informações básicas</h4>
+						</div>
+
+						<div class="card-body">
+							<div class="row g-3">
+								<div class="col-md-4">
+									<label for="brand">Marca *</label>
+									<input type="text" id="brand" th:field="*{brand}" class="form-control"
+										placeholder="Ex: Toyota" required />
+								</div>
+
+								<div class="col-md-4">
+									<label for="model">Modelo *</label>
+									<input type="text" id="model" th:field="*{model}" class="form-control"
+										placeholder="Ex: Corolla" required />
+								</div>
+
+								<div class="col-md-4">
+									<label for="version">Versão *</label>
+									<input type="text" id="version" th:field="*{version}" class="form-control"
+										placeholder="Ex: XE 2.0" />
+								</div>
+
+								<div class="col-md-4">
+									<label for="plate">Placa *</label>
+									<input type="text" id="plate" th:field="*{plate}" class="form-control"
+										placeholder="Ex: ABC1234" maxlength="8" 
+										oninput="this.value = this.value.toUpperCase()" required />
+								</div>
+
+								<div class="col-md-4">
+									<label for="color">Cor *</label>
+									<select id="color" th:field="*{color}" class="form-select" required>
+										<option value="">Selecione</option>
+										<option th:each="c : ${T(br.com.AutoStock.enums.ColorEnum).values()}"
+											th:value="${c}" th:text="${c.label}"></option>
+									</select>
+								</div>
+
+								<div class="col-md-4">
+									<label for="manufactureYear">Ano de fabricação *</label>
+									<input type="text" id="manufactureYear" th:field="*{manufactureYear}"
+										class="form-control" placeholder="Ex: 2023" />
+								</div>
+
+								<div class="col-md-4">
+									<label for="modelYear">Ano modelo *</label>
+									<input type="text" id="modelYear" th:field="*{modelYear}" class="form-control"
+										placeholder="Ex: 2024" />
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="card mb-3">
+						<div class="section-title">
+							<div class="section-icon-wrapper">
+								<span class="section-number">2</span>
+								<i class="fa-solid fa-file-contract"></i>
+							</div>
+							<h4 class="section-label">Documentação</h4>
+						</div>
+						<div class="card-body">
+							<div class="row g-3">
+								<div class="col-md-4">
+									<label for="chassis">Chassi *</label>
+									<input type="text" id="chassis" th:field="*{chassis}" class="form-control"
+										maxlength="17" placeholder="Ex: 9BWZZZ377VT004251" required />
+								</div>
+								<div class="col-md-4">
+									<label for="renavam">RENAVAM *</label>
+									<input type="text" id="renavam" th:field="*{renavam}" class="form-control"
+										maxlength="11" placeholder="Ex: 00525353011" required />
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="card mb-3">
+						<div class="section-title">
+							<div class="section-icon-wrapper">
+								<span class="section-number">3</span>
+								<i class="fa-solid fa-money-bill-wave section-icon"></i>
+							</div>
+							<h4 class="section-label">Valores</h4>
+						</div>
+						<div class="card-body">
+							<div class="row g-3">
+								<div class="col-md-4">
+									<label for="mileage">Quilometragem *</label>
+									<input type="text" id="mileage" th:field="*{mileage}" class="form-control"
+										placeholder="Ex: 50.000" required />
+								</div>
+								<div class="col-md-4">
+									<label for="purchasePrice">Preço de compra (R$) *</label>
+									<input type="text" id="purchasePrice" th:field="*{purchasePrice}"
+										class="form-control" placeholder="Ex: 85.000" required />
+								</div>
+								<div class="col-md-4">
+									<label for="fipeCode">Código FIPE *</label>
+									<input type="text" id="fipeCode" th:field="*{fipeCode}" class="form-control"
+										placeholder="Ex: 001267-0" />
+								</div>
+								<div class="col-md-4">
+									<label for="fipeTable">Valor FIPE (R$)</label>
+									<input type="hidden" id="fipeTable" th:field="*{fipeTable}" />
+									<input type="text" id="fipeTableView" class="form-control" placeholder="ESTE CAMPO É PREENCHIDO AUTOMATICAMENTE" readonly />
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="card mb-3">
+						<div class="section-title">
+							<div class="section-icon-wrapper">
+								<span class="section-number">4</span>
+								<i class="fa-solid fa-gears section-icon"></i>
+							</div>
+							<h4 class="section-label">Características</h4>
+						</div>
+						<div class="card-body">
+							<div class="row g-3">
+
+								<div class="col-md-4">
+									<label for="riskCategory">Categoria de risco *</label>
+									<select id="riskCategory" th:field="*{riskCategory}" class="form-select">
+										<option value="BAIXO">Baixo</option>
+										<option value="MEDIO">Médio</option>
+										<option value="ALTO">Alto</option>
+									</select>
+								</div>
+
+								<div class="col-md-4">
+									<label for="fuel">Combustível *</label>
+									<select id="fuel" th:field="*{fuel}" class="form-select" required>
+										<option value="">Selecione</option>
+										<option th:each="f : ${T(br.com.AutoStock.enums.FuelType).values()}"
+											th:value="${f}" th:text="${f.label}"></option>
+									</select>
+								</div>
+
+								<div class="col-md-4">
+									<label for="transmission">Câmbio *</label>
+									<select id="transmission" th:field="*{transmission}" class="form-select" required>
+										<option value="">Selecione</option>
+										<option th:each="t : ${T(br.com.AutoStock.enums.TransmissionType).values()}"
+											th:value="${t}" th:text="${t.label}"></option>
+									</select>
+								</div>
+
+								<div class="col-md-4">
+									<label for="doors">Nº de portas *</label>
+									<select id="doors" th:field="*{doors}" class="form-select" required>
+										<option value="">Selecione</option>
+										<option value="2">2 portas</option>
+										<option value="3">3 portas</option>
+										<option value="4">4 portas</option>
+										<option value="5">5 portas</option>
+									</select>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+				<section>
+					<div class="card mb-3">
+						<div class="section-title">
+							<div class="section-icon-wrapper">
+								<span class="section-number">5</span>
+								<i class="fa-solid fa-camera section-icon"></i>
+							</div>
+							<h4 class="section-label">Imagens do Veículo</h4>
+						</div>
+						<div class="card-body">
+							<div class="row g-3">
+								<div class="col-12">
+									<label for="files" class="form-label">Adicione fotos do veículo *</label>
+									<input type="file" id="files" name="files" accept="image/*" multiple
+										class="form-control d-none" onchange="addFiles(event)" required />
+									<label for="files" class="custom-file-upload">
+										<div class="upload-area" id="upload-area">
+											<i class="fas fa-cloud-upload-alt me-2"></i> Adicionar imagens
+										</div>
+									</label>
+									<p class="text-muted mt-2">Formatos aceitos: JPG, PNG, WEBP.</p>
+								</div>
+								<div id="preview" class="mt-2"></div>
+							</div>
+						</div>
+				</section>
+
+				<div class="d-flex justify-content-center gap-3 mt-4">
+					<button type="submit" class="btn btn-primary"><i class="bi bi-check-circle me-1"></i>
+						Cadastrar</button>
+					<a href="/home" class="btn btn-secondary"><i class="bi bi-arrow-left me-1"></i> Voltar</a>
+				</div>
+			</form>
+		</div>
+	</main>
+
+	<footer>
+		© 2025 AutsoStock — Sistema completo para lojas de veículos.
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/autonumeric@4.10.5/dist/autoNumeric.min.js"></script>
+	<script src="/scripts/create-vehicle.js" th:src="@{/scripts/create-vehicle.js}"></script>
+
+</body>
+
+</html>

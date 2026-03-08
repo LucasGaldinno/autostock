@@ -1,0 +1,293 @@
+body {
+    background-color: #f4f7fa;
+    color: #333;
+    font-family: "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.p-4 {
+    padding: 1.5rem !important;
+    margin: 0 auto;
+}
+
+.me-2{
+    cursor: pointer;
+}
+
+.side-menu {
+    background-color: #0f172a;
+    min-height: 100vh;
+    width: 260px;
+    padding: 25px 15px;
+    border-right: 1px solid #1e293b;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed; 
+    left: 0;
+    top: 0;
+    transition: all 0.3s ease;
+    z-index: 1200;
+}
+
+.side-menu h4 {
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.side-menu hr {
+    width: 80%;
+    border-color: #334155;
+    margin-bottom: 20px;
+}
+
+.side-menu .btn {
+    font-weight: 500;
+    color: #e2e8f0;
+    background-color: #1e293b;
+    border: none;
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.side-menu .btn:hover {
+    background-color: #3b82f6;
+    color: #fff;
+    transform: translateX(5px);
+}
+
+.side-menu form button {
+    background-color: #ef4444;
+    color: #fff;
+    border: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+}
+
+.side-menu form button:hover {
+    background-color: #dc2626;
+    transform: translateX(5px);
+}
+
+.main-content {
+    padding-left: 260px;
+    transition: 0.3s ease;
+}
+
+@media (max-width: 992px) {
+    .main-content {
+        padding-left: 0;
+    }
+}
+
+.mobile-menu-btn {
+    position: fixed;
+    top: 18px;
+    left: 18px;
+    z-index: 2001;
+    width: 45px;
+    height: 45px;
+    background: #0f172a;
+    border: 2px solid #1e293b;
+    border-radius: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.mobile-menu-btn i {
+    font-size: 1.3rem;
+    color: #e2e8f0;
+    transition: 0.3s ease;
+}
+
+.mobile-menu-btn:hover {
+    background: #1e293b;
+    transform: scale(1.05);
+}
+
+.mobile-menu-btn:hover i {
+    color: #3b82f6;
+}
+
+.mobile-menu-btn.active i {
+    transform: rotate(90deg);
+    color: #ef4444 !important;
+}
+
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: flex;
+    }
+
+    .side-menu {
+        left: -260px;
+        display: flex !important;
+    }
+
+    .side-menu.active {
+        left: 0;
+		z-index: 2000;
+    }
+
+    .mobile-header-spacer {
+        height: 70px;
+        width: 100%;
+    }
+}
+
+.menu-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 1500;
+    background: rgba(0,0,0,0.4);
+}
+
+.menu-overlay.active {
+    display: block;
+}
+
+.metric-box, 
+.report-container {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeSlideIn 0.6s ease-out forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.metric-box:hover, 
+.report-container:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.metric-box {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.metric-box h5 {
+    color: #64748b;
+    font-size: 0.95rem;
+    margin-bottom: 4px;
+}
+
+.metric-box p {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #0f172a;
+    margin: 0;
+}
+
+.report-container {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.report-container h5 {
+    color: #0f172a;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.big-chart, .small-chart {
+    width: 100% !important;
+    min-height: 260px;
+}
+
+.big-chart > div, 
+.small-chart > div {
+    width: 100% !important;
+    height: 100% !important;
+}
+
+.apexcharts-xaxis-label,
+.apexcharts-yaxis-label {
+    fill: #334155 !important;
+    font-weight: 500;
+}
+
+.apexcharts-legend-text {
+    fill: #0f172a !important;
+}
+
+.apexcharts-tooltip {
+    background: #fff !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 8px !important;
+    padding: 10px !important;
+    color: #0f172a !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08) !important;
+}
+
+table {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+table thead tr {
+    background-color: #f1f5f9;
+}
+
+table th {
+    color: #0f172a;
+    font-weight: 600;
+}
+
+table td {
+    color: #334155;
+}
+
+table tbody tr:hover {
+    background-color: #f8fafc;
+}
+
+.alert {
+    border-radius: 8px;
+    padding: 12px 15px;
+}
+
+.alert-info {
+    position: relative;
+    padding-left: 45px !important;
+}
+
+.alert-info::before {
+    content: "\f05a";
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #0ea5e9;
+    font-size: 1.3rem;
+}
