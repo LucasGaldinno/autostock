@@ -1,7 +1,3 @@
-# Tech Stack
-
-Java • Spring Boot • Spring Security • MySQL • Docker • Git
-
 # 🚗 AutoStock
 
 AutoStock é uma plataforma web e mobile desenvolvida para automatizar a gestão de pequenas e médias agências de veículos, substituindo processos manuais por uma solução digital integrada.
@@ -10,9 +6,15 @@ O sistema permite o gerenciamento de estoque de veículos, controle financeiro, 
 
 ---
 
-# 📌 Problema
+## ⚙ Tech Stack
 
-Muitas agências de veículos de pequeno e médio porte ainda utilizam processos manuais para:
+Java • Spring Boot • Spring Security • MySQL • Git
+
+---
+
+## 📌 Problema
+
+Muitas agências de veículos de pequeno e médio porte ainda utilizam processos manuais para gerenciar suas operações, como:
 
 - Controle de estoque
 - Emissão de contratos
@@ -24,65 +26,72 @@ Esses processos aumentam o risco de erros operacionais, dificultam a organizaç�
 
 ---
 
-# 🎯 Objetivo
+## 🎯 Objetivo
 
-O objetivo do AutoStock é modernizar a gestão dessas agências através de uma aplicação digital que permita:
+O objetivo do **AutoStock** é modernizar a gestão dessas agências por meio de uma aplicação digital que permita:
 
 - Automatizar processos administrativos
 - Melhorar o controle do estoque de veículos
 - Facilitar a geração de contratos de venda
 - Monitorar indicadores financeiros
-- Integrar dados de mercado como a Tabela FIPE
+- Integrar dados de mercado, como a **Tabela FIPE**
 
 ---
 
-# 🧩 Funcionalidades
+## 🧩 Funcionalidades
 
-## Gestão de Veículos
+### 🚘 Gestão de Veículos
+
 - Cadastro de veículos
 - Controle de estoque
 - Classificação por categoria
 
-## Contratos
+### 📄 Contratos
+
 - Geração de contratos digitais de compra e venda
 - Registro de histórico de vendas
 
-## Gestão Financeira
+### 💰 Gestão Financeira
+
 - Controle de gastos por veículo
 - Cálculo de margem de lucro
 - Relatórios de vendas
 
-## Garantias
+### 🛡 Garantias
+
 - Registro e controle de garantias de veículos vendidos
 
-## Integração de Dados
+### 🔗 Integração de Dados
+
 - Consulta de valores pela **Tabela FIPE**
 
-## Gestão de Usuários
+### 👥 Gestão de Usuários
+
 - Cadastro de funcionários
 - Convite de novos colaboradores
 - Controle de permissões
 
-## Dashboard
+### 📊 Dashboard
+
 - Indicadores de vendas
 - Relatórios mensais
 - Crescimento de vendas
 
 ---
 
-# 🏗 Arquitetura do Sistema
+## 🏗 Arquitetura do Sistema
 
-A aplicação foi desenvolvida seguindo uma arquitetura em camadas para garantir organização, escalabilidade e manutenção do código.
+A aplicação foi desenvolvida seguindo uma **arquitetura em camadas**, garantindo organização, escalabilidade e facilidade de manutenção.
 
 <div align="center">
 
-Frontend (HTML / Thymeleaf)<br>
+Frontend (HTML + Thymeleaf)<br>
 ↓<br>
 Backend API (Spring Boot)<br>
 ↓<br>
 Spring Security + JWT Authentication<br>
 ↓<br>
-Service Layer (Regras de negócio)<br>
+Service Layer (Regras de Negócio)<br>
 ↓<br>
 Repository Layer (JPA / Hibernate)<br>
 ↓<br>
@@ -92,18 +101,18 @@ MySQL Database
 
 ---
 
-# 💻 Tecnologias Utilizadas
+## 💻 Tecnologias Utilizadas
 
-## Backend
+### Backend
 
 - Java
 - Spring Boot
 - Spring Security
 - Spring Data JPA
 - Hibernate
-- API REST
+- REST API
 
-## Frontend
+### Frontend
 
 - HTML5
 - CSS3
@@ -111,26 +120,22 @@ MySQL Database
 - Bootstrap
 - Thymeleaf
 
-## Banco de Dados
+### Banco de Dados
 
 - MySQL
 - MySQL Workbench
 
-## Segurança
+### Segurança
 
-- OAuth 2.0
-- JWT (JSON Web Token)
-
-## Infraestrutura
-
-- Docker
-- Microsoft Azure
+- Autenticação com **Spring Security**
+- Autorização baseada em **JWT (JSON Web Token)**
+- Proteção de rotas e controle de permissões
 
 ---
 
-# 📱 Plataformas
+## 📱 Plataformas
 
-## Versão Web
+### 🌐 Versão Web
 
 Plataforma principal utilizada pelas agências para gerenciamento completo das operações, incluindo:
 
@@ -142,17 +147,15 @@ Plataforma principal utilizada pelas agências para gerenciamento completo das o
 - Relatórios de vendas e desempenho
 - Gerenciamento de usuários e permissões
 
-## Versão Mobile
+### 📱 Versão Mobile
 
-A versão mobile permite acesso completo ao sistema por meio de dispositivos móveis, oferecendo as mesmas funcionalidades da plataforma web.
+A versão mobile permite acesso ao sistema por meio de dispositivos móveis.
 
-A aplicação utiliza **WebView**, possibilitando que a interface web seja executada dentro de um aplicativo mobile, garantindo:
+A aplicação utiliza **WebView**, permitindo que a interface web seja executada dentro de um aplicativo mobile, garantindo:
 
 - Acesso remoto à plataforma
 - Mobilidade para gestores
 - Experiência consistente entre web e mobile
-
----
 
 <div align="center">
 
@@ -170,50 +173,43 @@ Mobile App using WebView
 
 ---
 
-# ☁ Deploy
-
-A aplicação foi containerizada utilizando **Docker** e hospedada na **Microsoft Azure**, garantindo:
-
-- Portabilidade
-- Escalabilidade
-- Facilidade de implantação
-- Padronização de ambiente
-
----
-
-# 🔒 Segurança
-
-Para garantir a segurança da aplicação foram implementados:
-
-- Autenticação com **OAuth2**
-- Controle de sessão utilizando **JWT**
-- Proteção de rotas com **Spring Security**
-
----
-
-# 📊 Benefícios da Solução
+## 📊 Benefícios da Solução
 
 - Redução de erros operacionais
 - Automatização de processos administrativos
 - Melhor organização do estoque
 - Maior controle financeiro
 - Geração rápida de contratos
-- Melhoria na tomada de decisão através de relatórios
+- Melhor tomada de decisão através de relatórios
 
 ---
 
-# 🎓 Projeto Acadêmico
+## 🚀 Melhorias Futuras
 
-Este projeto foi desenvolvido como trabalho de conclusão do curso de **Sistemas de Informação**, com o objetivo de aplicar conceitos de engenharia de software, desenvolvimento web, segurança e arquitetura de sistemas.
+Algumas melhorias planejadas para evolução do projeto:
+
+- Containerização da aplicação com **Docker**
+- Deploy em ambiente de **Cloud**
+- Documentação da API com **Swagger / OpenAPI**
+- Implementação de **testes automatizados**
+- Aplicativo mobile nativo
 
 ---
 
-# 👨‍💻 Autor
+## 🎓 Projeto Acadêmico
 
-Desenvolvido por:
+Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do curso de **Sistemas de Informação**, com o objetivo de aplicar conceitos de:
+
+- Engenharia de Software
+- Desenvolvimento Web
+- Segurança de Aplicações
+- Arquitetura de Sistemas
+
+---
+
+## 👨‍💻 Autor
 
 **Lucas Galdino**
 
 Desenvolvedor Full Stack  
-Java | Spring Boot | APIs | Cloud
-
+Java • Spring Boot • APIs • Backend Development
