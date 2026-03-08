@@ -74,18 +74,21 @@ O objetivo do AutoStock é modernizar a gestão dessas agências através de uma
 
 A aplicação foi desenvolvida seguindo uma arquitetura em camadas para garantir organização, escalabilidade e manutenção do código.
 
-Frontend (HTML / Thymeleaf)
-↓
-Backend API (Spring Boot)
-↓
-Spring Security + JWT Authentication
-↓
-Service Layer (Regras de negócio)
-↓
-Repository Layer (JPA / Hibernate)
-↓
+<div align="center">
+
+Frontend (HTML / Thymeleaf)<br>
+↓<br>
+Backend API (Spring Boot)<br>
+↓<br>
+Spring Security + JWT Authentication<br>
+↓<br>
+Service Layer (Regras de negócio)<br>
+↓<br>
+Repository Layer (JPA / Hibernate)<br>
+↓<br>
 MySQL Database
 
+</div>
 
 ---
 
@@ -129,24 +132,41 @@ MySQL Database
 
 ## Versão Web
 
-Utilizada internamente pelas agências para:
+Plataforma principal utilizada pelas agências para gerenciamento completo das operações, incluindo:
 
 - Cadastro e gerenciamento de veículos
+- Controle de estoque
 - Gestão financeira
-- Emissão de contratos
+- Emissão de contratos digitais
 - Controle de garantias
-- Relatórios operacionais
+- Relatórios de vendas e desempenho
+- Gerenciamento de usuários e permissões
 
 ## Versão Mobile
 
-Aplicação voltada para gestores permitindo:
+A versão mobile permite acesso completo ao sistema por meio de dispositivos móveis, oferecendo as mesmas funcionalidades da plataforma web.
 
-- Consulta rápida de estoque
-- Verificação de caixa
-- Relatórios de vendas
-- Acompanhamento de desempenho
+A aplicação utiliza **WebView**, possibilitando que a interface web seja executada dentro de um aplicativo mobile, garantindo:
 
-A versão mobile utiliza **WebView**, permitindo acessar a interface web dentro do aplicativo.
+- Acesso remoto à plataforma
+- Mobilidade para gestores
+- Experiência consistente entre web e mobile
+
+---
+
+<div align="center">
+
+Web Application (Spring Boot + Thymeleaf)
+
+⬇️
+
+Accessible via Browser
+
+⬇️
+
+Mobile App using WebView
+
+</div>
 
 ---
 
