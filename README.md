@@ -1,3 +1,17 @@
+## 📌 Sobre o Repositório
+
+Este repositório contém uma **versão demonstrativa** do projeto AutoStock.
+
+Alguns componentes da aplicação, como configurações de infraestrutura,
+arquivos de ambiente e scripts de deploy utilizados no ambiente acadêmico,
+não foram incluídos neste repositório.
+
+O objetivo deste projeto é demonstrar a arquitetura da aplicação,
+as tecnologias utilizadas e a implementação das principais funcionalidades.
+
+A configuração completa de infraestrutura e deploy (Docker e Azure)
+foi utilizada no ambiente do projeto acadêmico.
+
 # 🚗 AutoStock
 
 AutoStock é uma plataforma web e mobile desenvolvida para automatizar a gestão de pequenas e médias agências de veículos, substituindo processos manuais por uma solução digital integrada.
@@ -184,15 +198,29 @@ Mobile App using WebView
 
 ---
 
-## 🚀 Melhorias Futuras
+## ☁ Deploy
 
-Algumas melhorias planejadas para evolução do projeto:
+A aplicação foi containerizada utilizando Docker e hospedada na Microsoft Azure, garantindo:
 
-- Containerização da aplicação com **Docker**
-- Deploy em ambiente de **Cloud**
-- Documentação da API com **Swagger / OpenAPI**
-- Implementação de **testes automatizados**
-- Aplicativo mobile nativo
+Portabilidade
+
+Escalabilidade
+
+Facilidade de implantação
+
+Padronização de ambiente
+
+---
+
+## 🔒 Segurança
+
+Para garantir a segurança da aplicação foram implementados:
+
+Autenticação com Spring Security
+
+Controle de sessão com JWT
+
+Proteção de rotas e controle de permissões
 
 ---
 
