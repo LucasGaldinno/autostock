@@ -206,10 +206,16 @@ Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do 
 - Arquitetura de Sistemas
 
 ---
+## 👨‍💻 Autor
+
+**Pedro Henrique Guedes**
+
+Documentação
 
 ## 👨‍💻 Autor
 
 **Lucas Galdino**
 
+Documentação
 Desenvolvedor Full Stack  
 Java • Spring Boot • APIs • Backend Development
