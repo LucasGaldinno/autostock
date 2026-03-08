@@ -1,4 +1,4 @@
-**Tech Stack**
+# Tech Stack
 
 Java • Spring Boot • Spring Security • MySQL • Docker • Git
 
