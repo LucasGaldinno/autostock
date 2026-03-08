@@ -212,7 +212,7 @@ Este projeto foi desenvolvido como trabalho de conclusão do curso de **Sistemas
 
 Desenvolvido por:
 
-**Lucas Galdino Sertão**
+**Lucas Galdino**
 
 Desenvolvedor Full Stack  
 Java | Spring Boot | APIs | Cloud
