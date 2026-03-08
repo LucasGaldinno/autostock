@@ -224,6 +224,14 @@ Proteção de rotas e controle de permissões
 
 ---
 
+## 🔐 Autenticação
+
+O sistema utiliza autenticação baseada em **Spring Security e JWT**.
+
+Durante o processo de cadastro, o usuário precisa **validar seu e-mail** antes de acessar a plataforma.
+
+Para isso, é utilizado um serviço **SMTP**, responsável por enviar o e-mail de confirmação contendo o link de ativação da conta.
+
 ## 🎓 Projeto Acadêmico
 
 Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do curso de **Sistemas de Informação**, com o objetivo de aplicar conceitos de:
@@ -234,6 +242,7 @@ Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do 
 - Arquitetura de Sistemas
 
 ---
+
 ## 👨‍💻 Autor
 
 **Pedro Henrique Guedes**
