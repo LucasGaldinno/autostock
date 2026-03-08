@@ -1,5 +1,6 @@
-AutoStock – Vehicle Agency Management System </br>
-Java • Spring Boot • MySQL • Docker • Git
+**Tech Stack**
+
+Java • Spring Boot • Spring Security • MySQL • Docker • Git
 
 # 🚗 AutoStock
 
