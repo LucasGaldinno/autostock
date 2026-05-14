@@ -1,16 +1,20 @@
 ## 📌 Sobre o Repositório
 
-Este repositório contém uma **versão demonstrativa** do projeto AutoStock.
+Este repositório contém uma versão demonstrativa do projeto AutoStock, desenvolvida para fins acadêmicos e apresentação de portfólio.
 
-Alguns componentes da aplicação, como configurações de infraestrutura,
-arquivos de ambiente e scripts de deploy utilizados no ambiente acadêmico,
-não foram incluídos neste repositório.
+Por questões de infraestrutura e configuração do ambiente acadêmico utilizado durante o desenvolvimento do projeto, alguns componentes não foram incluídos neste repositório, como:
 
-O objetivo deste projeto é demonstrar a arquitetura da aplicação,
-as tecnologias utilizadas e a implementação das principais funcionalidades.
+* Arquivos de ambiente (.env)
+* Scripts de deploy
+* Configurações de infraestrutura
+* Recursos utilizados no ambiente Azure
 
-A configuração completa de infraestrutura e deploy (Docker e Azure)
-foi utilizada no ambiente do projeto acadêmico.
+O objetivo deste repositório é apresentar:
+
+* Arquitetura da aplicação
+* Tecnologias utilizadas
+* Estrutura do projeto
+* Principais funcionalidades implementadas
 
 # 🚗 AutoStock
 
@@ -161,15 +165,11 @@ Plataforma principal utilizada pelas agências para gerenciamento completo das o
 - Relatórios de vendas e desempenho
 - Gerenciamento de usuários e permissões
 
-### 📱 Versão Mobile
+### 📱 Compatibilidade Mobile
 
-A versão mobile permite acesso ao sistema por meio de dispositivos móveis.
+A aplicação foi desenvolvida com interface responsiva utilizando HTML, CSS e JavaScript, permitindo acesso ao sistema por dispositivos móveis diretamente pelo navegador.
 
-A aplicação utiliza **WebView**, permitindo que a interface web seja executada dentro de um aplicativo mobile, garantindo:
-
-- Acesso remoto à plataforma
-- Mobilidade para gestores
-- Experiência consistente entre web e mobile
+O objetivo foi garantir uma experiência consistente entre desktop e smartphones, facilitando o acesso remoto à plataforma por gestores e colaboradores.
 
 <div align="center">
 
@@ -181,7 +181,7 @@ Accessible via Browser
 
 ↓
 
-Mobile App using WebView
+Responsive Interface for Mobile Devices
 
 </div>
 
@@ -200,15 +200,11 @@ Mobile App using WebView
 
 ## ☁ Deploy
 
-A aplicação foi containerizada utilizando Docker e hospedada na Microsoft Azure, garantindo:
+☁ Deploy
 
-Portabilidade
+Durante o desenvolvimento acadêmico do projeto, foram utilizados Docker e Microsoft Azure para configuração e deploy da aplicação no ambiente disponibilizado pela instituição de ensino.
 
-Escalabilidade
-
-Facilidade de implantação
-
-Padronização de ambiente
+A infraestrutura utilizada no projeto acadêmico não está mais disponível neste repositório.
 
 ---
 
@@ -245,16 +241,64 @@ Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do 
 
 ---
 
-## 👨‍💻 Autor
+## 📸 Screenshots
 
-**Pedro Henrique Guedes**
+### 🔐 Tela de Login
 
-Documentação
+<div align="center">
+  <img src="https://raw.githubusercontent.com/LucasGaldinno/autostock/refs/heads/main/docs/screenshots/Tela-acesso.png" alt="Tela de Login" width="800"/>
+</div>
 
-## 👨‍💻 Autor
+---
 
-**Lucas Galdino**
+### 📊 Dashboard
 
-Documentação</br>
-Desenvolvedor Full Stack  
-Java • Spring Boot • APIs • Backend Development
+<div align="center">
+  <img src="https://raw.githubusercontent.com/LucasGaldinno/autostock/refs/heads/main/docs/screenshots/Tela-dashboard.png" alt="Dashboard do Sistema" width="800"/>
+</div>
+
+---
+
+### 🚘 Gestão de Veículos
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/LucasGaldinno/autostock/refs/heads/main/docs/screenshots/Tela-estoque.png" alt="Gestão de Veículos" width="800"/>
+</div>
+
+---
+
+### 💰 Gestão Financeira
+
+<div align="center">
+  <img src="./docs/financeiro.png" alt="Gestão Financeira" width="800"/>
+</div>
+
+---
+
+### 📄 Contratos
+
+<div align="center">
+  <img src="https://raw.githubusercontent.com/LucasGaldinno/autostock/refs/heads/main/docs/screenshots/Tela-gerarContrato.png" alt="Contratos Digitais" width="800"/>
+</div>
+
+---
+
+## 👨‍💻 Desenvolvedores
+
+### Pedro Henrique Guedes
+
+* Documentação
+* Infraestrutura e deploy
+* Docker
+* Microsoft Azure
+
+### Lucas Galdino
+
+* Frontend (HTML, CSS, JavaScript, Bootstrap e Thymeleaf)
+* Backend com Java e Spring Boot
+* APIs REST
+* Spring Security e JWT
+* Modelagem e integração com MySQL
+* JPA / Hibernate
+* Documentação
+
