@@ -107,7 +107,7 @@ Frontend (HTML + Thymeleaf)<br>
 ↓<br>
 Backend API (Spring Boot)<br>
 ↓<br>
-Spring Security + JWT Authentication<br>
+Spring Security + Authentication<br>
 ↓<br>
 Service Layer (Regras de Negócio)<br>
 ↓<br>
@@ -214,8 +214,6 @@ Para garantir a segurança da aplicação foram implementados:
 
 Autenticação com Spring Security
 
-Controle de sessão com JWT
-
 Proteção de rotas e controle de permissões
 
 ---
@@ -238,6 +236,24 @@ Este projeto foi desenvolvido como **Trabalho de Conclusão de Curso (TCC)** do 
 - Desenvolvimento Web
 - Segurança de Aplicações
 - Arquitetura de Sistemas
+
+---
+
+## 🌐 Integrações Externas
+
+O sistema realiza integração com APIs externas para automatizar validações e consultas de dados utilizados pela plataforma.
+
+### BrasilAPI
+
+Utilizada para:
+
+* Consulta e validação de CEP
+* Consulta de dados de empresas via CNPJ
+* Consulta de valores da Tabela FIPE
+
+Documentação oficial: [BrasilAPI Docs](https://brasilapi.com.br/docs?utm_source=chatgpt.com)
+
+As integrações foram realizadas através de requisições HTTP utilizando APIs REST em formato JSON.
 
 ---
 
