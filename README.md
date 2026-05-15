@@ -283,7 +283,7 @@ As integrações foram realizadas através de requisições HTTP utilizando APIs
 ### 💰 Gestão Financeira
 
 <div align="center">
-  <img src="./docs/financeiro.png" alt="Gestão Financeira" width="800"/>
+  <img src="https://raw.githubusercontent.com/LucasGaldinno/autostock/refs/heads/main/docs/screenshots/relatorio.png" alt="Gestão Financeira" width="800"/>
 </div>
 
 ---
