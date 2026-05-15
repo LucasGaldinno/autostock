@@ -26,7 +26,7 @@ O sistema permite o gerenciamento de estoque de veículos, controle financeiro, 
 
 ## ⚙ Tech Stack
 
-Java • Spring Boot • Spring Security • MySQL • Git
+Java • Spring Boot • Spring Security • MySQL • Git • HTML • CSS • JS
 
 ---
 
@@ -146,7 +146,6 @@ MySQL Database
 ### Segurança
 
 - Autenticação com **Spring Security**
-- Autorização baseada em **JWT (JSON Web Token)**
 - Proteção de rotas e controle de permissões
 
 ---
@@ -219,8 +218,6 @@ Proteção de rotas e controle de permissões
 ---
 
 ## 🔐 Autenticação
-
-O sistema utiliza autenticação baseada em **Spring Security e JWT**.
 
 Durante o processo de cadastro, o usuário precisa **validar seu e-mail** antes de acessar a plataforma.
 
@@ -313,7 +310,7 @@ As integrações foram realizadas através de requisições HTTP utilizando APIs
 * Frontend (HTML, CSS, JavaScript, Bootstrap e Thymeleaf)
 * Backend com Java e Spring Boot
 * APIs REST
-* Spring Security e JWT
+* Spring Security
 * Modelagem e integração com MySQL
 * JPA / Hibernate
 * Documentação
